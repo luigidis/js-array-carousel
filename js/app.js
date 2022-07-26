@@ -22,16 +22,16 @@ console.log(slidesWrapperEl);
 
 // generare il contenuto dello slider
 
-for (let i = 0; i < slides.length; i++); {
+for (let i = 0; i < slides.length; i++) {
     const src = slides[i];
     console.log(src);
     // Creo il'li
     const li = document.createElement('li');
     // Aggiungo la classe slide a questo li
-    li.className = 'slide';
+    li.className = 'item';
     // gli metto la classe active
     if (i === currentIndex) {
-        li.classList.add('.active')
+        li.classList.add('active')
     }
     // Creo l'immagine
     const img = document.createElement('img');
@@ -54,10 +54,16 @@ const nextArrowEl = document.querySelector('.arrow_next');
 nextArrowEl.addEventListener('click', function () {
     console.log('tasto next premuto');
     // togliere la classe active della slide attiva
-    const slideAttiva = document.querySelector('.item.active');
+    const slideAttiva = slidesElement[currentIndex]
     console.log(slideAttiva);
     slideAttiva.classList.remove('active');
     // aggiungere la classe active alla slide successiva (se esiste)
+    const slideSuccessiva = slidesElement[currentIndex + 1]
+    console.log(slideSuccessiva)
+    slideSuccessiva.classList.add('active')
+
+    currentIndex++
+    console.log(currentIndex)
 });  
 
 
