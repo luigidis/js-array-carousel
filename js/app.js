@@ -1,7 +1,11 @@
 console.log('yo');
 
 const slides = [
-    ''
+    './img/01.jpg',
+    './img/02.jpg',
+    './img/03.jpg',
+    './img/04.jpg',
+    './img/05.jpg',
 ];
 
 // mi creo un array dove avrò le immagini già create in HTML
@@ -21,7 +25,7 @@ console.log(slidesWrapperEl);
 for (let i = 0; i < slides.length; i++); {
     const src = slides[i];
     console.log(src);
-    // Creo l'li
+    // Creo il'li
     const li = document.createElement('li');
     // Aggiungo la classe slide a questo li
     li.className = 'slide';
