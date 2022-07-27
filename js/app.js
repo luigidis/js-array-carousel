@@ -60,7 +60,7 @@ nextArrowEl.addEventListener('click', function () {
     slideAttiva.classList.remove('active');
     // mi vado a inizializzare la slideSuccessiva e a fare un controllo dell'index per ripetere il ciclo delle immagini
     let slideSuccessiva
-    if (currentIndex === 4) {
+    if (currentIndex === (slidesElement.length - 1)) {
         currentIndex = 0
     } else {
         currentIndex++
