@@ -11,6 +11,8 @@ const slides = [
 // mi creo un array dove avrò le immagini già create in HTML
 const slidesElement = [];
 
+
+
 // gestisco lo stato del mio carosello con una variabile
 let currentIndex = 0;
 // recuperare il contenitore dello slider
@@ -44,7 +46,9 @@ for (let i = 0; i < slides.length; i++) {
     // le inserisco nel mio array vuoto precedentemente
     slidesElement.push(li);
 }
-    
+
+// dichiaro con una variabile l'ultimo item dell'array dove pusho i miei elementi
+let lastItem = slidesElement.length - 1
 
 
 
@@ -60,7 +64,7 @@ nextArrowEl.addEventListener('click', function () {
     slideAttiva.classList.remove('active');
     // mi vado a inizializzare la slideSuccessiva e a fare un controllo dell'index per ripetere il ciclo delle immagini
     let slideSuccessiva
-    if (currentIndex === (slidesElement.length - 1)) {
+    if (currentIndex === lastItem) {
         currentIndex = 0
     } else {
         currentIndex++
@@ -85,7 +89,7 @@ prevArrowEl.addEventListener('click', function() {
     // mi vado a inizializzare la slidePrecedente e a fare un controllo sull'index per ripete il ciclo delle img
     let slidePrecedente
     if (currentIndex === 0) {
-        currentIndex = 4
+        currentIndex = lastItem 
     } else {
         currentIndex--
     }
